@@ -1,0 +1,214 @@
+li {
+    list-style-type: none;
+}
+
+.box {
+    border-radius: 50px;
+    margin: 20px 20px;
+}
+
+.chatbox {
+    margin: 100px auto;
+    height: 740px;
+    width: 1280px;
+    background: #ffffff;
+    display: none;
+}
+
+.boxleft {
+    height: 700px;
+    width: 300px;
+    background: #eac7cc;
+    float: left;
+}
+
+.boxmid {
+    height: 700px;
+    width: 600px;
+    background: #eac7cc;
+    float: left;
+    margin: 20px 0px;
+}
+
+.boxright {
+    height: 700px;
+    width: 300px;
+    background: #eac7cc;
+    float: left;
+}
+
+.msgdesk {
+    background: #ffffff;
+    margin: 10px 10px;
+    border-radius: 40px;
+    height: 500px;
+    overflow: auto;
+}
+
+.myinfo,
+.roominfo {
+    margin: 10px 10px;
+    height: 160px;
+    background: #fff;
+    border-radius: 50px;
+}
+
+.roomdesk,
+.memberdesk {
+    margin: 10px 10px;
+    background: #fff;
+    border-radius: 50px;
+    height: 510px;
+    overflow: auto;
+}
+
+.msgwright {
+    margin: 10px 10px;
+    background: #fff;
+    border-radius: 50px;
+    height: 170px;
+    overflow: hidden;
+}
+
+.roomlist img {
+    width: 60px;
+    height: 60px;
+}
+
+.myinfo img,
+.roominfo img {
+    margin: 30px 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    float: left;
+}
+
+.myinfo span,
+.roominfo span {
+    float: left;
+    width: 140px;
+    height: 120px;
+    margin: auto auto;
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+#presend {
+    height: 130px;
+    width: 420px;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    float: left;
+    border: 0px;
+    outline: none;
+}
+
+
+#send {
+    background:url(../image/send.png);
+    background-size: contain;
+}
+
+#newroom {
+    background:url(../image/newr.png);
+    background-size: contain;
+}
+
+#size1{
+    background: url(../image/size1.png);
+    background-size: contain;
+}
+#size2{
+    background: url(../image/size2.png);
+    background-size: contain;
+}
+#size3{
+    background: url(../image/size3.png);
+    background-size: contain;
+}
+#fonti{
+    background: url(../image/fonti.png);
+    background-size: contain;
+}
+#fontn{
+    background: url(../image/fontn.png);
+    background-size: contain;
+}
+.bbtt{
+    float: left;
+    height: 60px;
+    width: 60px;
+    margin: 10px 10px;
+    border: 0px;
+}
+
+.memberlist li {
+    border-radius: 5px;
+    margin: 10px 30px 0px 0px;
+    background-color: #ffcccc;
+    height: 80px;
+}
+
+.memberlist img {
+    margin: 10px 10px;
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    float: left;
+}
+
+.memberlist h1 {
+    float: left;
+}
+
+.roomdesk h3,
+.memberdesk h3 {
+    text-align: center;
+}
+
+.roomdesk button {
+    margin: 2px auto;
+    width: 200px;
+    height: 65px;
+    background-color: #e7e7e7;
+    color: black;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 0px solid #4CAF50;
+    font-size: 22px;
+}
+
+.roomdesk button:hover {
+    background-color: lightblue;
+    color: blue;
+}
+
+.roomdesk button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(1px);
+}
+
+.roomdesk img{
+    float: left;
+    border-radius: 30px;
+}
+
+.l{
+    color: #3e8e41;
+}
+.r{
+    color: royalblue;
+}
+.con{
+    color: #000;
+}
+
+.msglist{
+    font-size:2em;
+    font-style: normal;
+}

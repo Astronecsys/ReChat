@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+
+body {
+    background: #cbc0d3;
+}
+
+/* 容器的样式 */
+.container {
+    margin: auto auto;
+    width: 650px;
+    height: 550px;
+    position: relative;
+}
+
+.container .welcome {
+    background: #f6f6f6;
+    width: 650px;
+    height: 415px;
+    position: absolute;
+    top: 35%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container .pinkbox {
+    position: absolute;
+    top: -10%;
+    left: 5%;
+    background: #eac7cc;
+    width: 320px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+
+.nodisplay {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.container .leftbox,
+.container .rightbox {
+    position: absolute;
+    width: 50%;
+    transition: 1s all ease;
+}
+
+.container .leftbox {
+    left: -2%;
+}
+
+.container .rightbox {
+    right: -2%;
+}
+
+/* 字体和按钮的样式 */
+.container h1 {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    margin-top: 95px;
+    text-transform: uppercase;
+    color: #f6f6f6;
+    font-size: 2em;
+    letter-spacing: 8px;
+}
+
+.container .title {
+    font-family: "Lora", serif;
+    color: #8e9aaf;
+    font-size: 1.8em;
+    line-height: 1.1em;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 20%;
+}
+
+
+.container .account {
+    margin-top: 65%;
+    font-size: 10px;
+}
+
+.container p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.7em;
+    letter-spacing: 2px;
+    color: #8e9aaf;
+    text-align: center;
+}
+
+.container span {
+    color: #eac7cc;
+}
+
+.container .flower {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 40%;
+    left: 30%;
+    opacity: 0.8;
+}
+
+
+.container button {
+    padding: 12px;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    border-radius: 10px;
+    margin: auto;
+    outline: none;
+    display: block;
+}
+
+.container button:hover {
+    background: #eac7cc;
+    color: #f6f6f6;
+    transition: background-color 1s ease-out;
+}
+
+.container .button {
+    margin-top: 3%;
+    background: #f6f6f6;
+    color: #ce7d88;
+    border: solid 1px #eac7cc;
+}
+
+/* 表单样式 */
+.container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 7px;
+}
+
+.container .more-padding {
+    padding-top: 35px;
+}
+
+.container .more-padding input {
+    padding: 12px;
+}
+
+.container .more-padding .sumbit {
+    margin-top: 45px;
+}
+
+.container .sumbit {
+    margin-top: 25px;
+    padding: 12px;
+    border-color: #ce7d88;
+}
+
+.container .sumbit:hover {
+    background: #cbc0d3;
+    border-color: #bfb1c9;
+}
+
+.container input {
+    background: #eac7cc;
+    width: 65%;
+    color: #ce7d88;
+    border: none;
+    border-bottom: 1px solid rgba(246, 246, 246, 0.5);
+    padding: 9px;
+    font-weight: 100;
+}
+
+.container input::placeholder {
+    color: #f6f6f6;
+    letter-spacing: 2px;
+    font-size: 1.0em;
+    font-weight: 100;
+}
+
+.container input:focus {
+    color: #ce7d88;
+    outline: none;
+    border-bottom: 1.2px solid rgba(206, 125, 136, 0.7);
+    font-size: 1.0em;
+    transition: 0.8s all ease;
+}
+
+.container input:focus::placeholder {
+    opacity: 0;
+}
+
+.container label {
+    font-family: "Open Sans", sans-serif;
+    color: #ce7d88;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+.container .checkbox {
+    display: inline;
+    white-space: nowrap;
+    position: relative;
+    left: -52px;
+    top: 25px;
+}
+
+.container input[type=checkbox] {
+    width: 15px;
+    background: #ce7d88;
+}
+
+.container .checkbox input[type=checkbox]:checked+label {
+    color: #ce7d88;
+    transition: 0.5s all ease;
+}

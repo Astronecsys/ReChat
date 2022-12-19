@@ -1,0 +1,31 @@
+{
+  "name": "rechat01",
+  "version": "1.0.0",
+  "description": "聊天室试作型01",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shelter-Xingwei/ReChat01.git"
+  },
+  "keywords": [
+    "chat",
+    "socket.io",
+    "web"
+  ],
+  "author": "星维",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shelter-Xingwei/ReChat01/issues"
+  },
+  "homepage": "https://github.com/Shelter-Xingwei/ReChat01#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.4"
+  }
+}

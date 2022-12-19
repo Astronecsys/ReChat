@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechat</title>
+    <!-- 引入JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- 引入CSS -->
+    <link rel="stylesheet" href="../css/welcome.css">
+    <link rel="stylesheet" href="../css/chatbox.css">
+
+</head>
+
+<body>
+    <!-- 调试按钮 -->
+    <button id="t0">切换登入前</button>
+    <button id="t1">切换登入后</button>
+    <!-- 欢迎界面 -->
+    <div id="container" class="container">
+        <div class="welcome">
+            <div class="pinkbox">
+                <!-- 注册 -->
+                <div class="signup nodisplay">
+                    <h1>注册</h1>
+                    <form autocomplete="off">
+                        <input id="Uname" type="text" placeholder="姓名">
+                        <input id="Phone" type="phone" placeholder="电话">
+                        <input id="password1" type="password" placeholder="密码">
+                        <input id="password2" type="password" placeholder="重复密码">
+                        <button type="button" id="register" class="button submit">创建账户</button>
+                    </form>
+                </div>
+
+                <!-- 登录 -->
+                <div class="signin">
+                    <h1>登录</h1>
+                    <form class="more-padding" autocomplete="off">
+                        <input id="Uid" type="text" placeholder="账号">
+                        <input id="password0" type="password" placeholder="密码">
+                        <button type="button" id="login" class="button submit">开始聊天</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="leftbox">
+                <h2 class="title"><span>ReChat</span></h2>
+                <img class="flower smaller" src="../image/flower1.png" />
+                <p class="account">已有账户?</p>
+                <button class="button" id="signin">去登入</button>
+            </div>
+
+            <div class="rightbox">
+                <h2 class="title"><span>ReChat</span></h2>
+                <img class="flower smaller" src="../image/flower2.png" />
+                <p class="account">未有账户?</p>
+                <button class="button" id="signup">去注册</button>
+            </div>
+        </div>
+    </div>
+    <!-- 聊天界面 -->
+    <div id="chatbox" class="chatbox box">
+        <div class="boxleft box">
+            <div class="myinfo" id="myinfo">
+                <img id="myavatar" src="../image/flower2.png">
+                <span id="myname">游客</span>
+            </div>
+            <div class="roomdesk">
+                <h3>聊天列表</h3>
+                <ul class="roomlist">
+                </ul>
+            </div>
+        </div>
+        <div class="boxmid box">
+            <div class="msgdesk">
+                <ul class="msglist">
+                    
+                </ul>
+            </div>
+            <div class="msgwright">
+                <textarea id="presend" cols="30" rows="10" placeholder="在这里输入"></textarea>
+                <button id="send" class="bbtt"></button>
+                <button id="newroom" class="bbtt"></button>
+                <button id="size1" class="bbtt"></button>
+                <button id="size2" class="bbtt"></button>
+                <button id="size3" class="bbtt"></button>
+                <button id="fonti" class="bbtt"></button>
+                <button id="fontn" class="bbtt"></button>
+            </div>
+        </div>
+        <div class="boxright box">
+            <div class="roominfo">
+                <img id="roomavatar" src="../image/flower1.png">
+                <span id="roomname">来聊天吧</span>
+            </div>
+            <div class="memberdesk">
+                <h3>在线列表</h3>
+                <ul class="memberlist">
+                    
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/welcome.js"></script>
+    <script src="../js/enter.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/socket.js"></script>
+</body>
+
+</html>
