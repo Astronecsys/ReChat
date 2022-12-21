@@ -96,10 +96,10 @@ io.on("connection", socket => {
                     })
                 })
             })
-            // socket加入服务器房间
-            rooms.forEach(room => {
-                socket.join(room.Rid)
-            })
+            // // socket加入服务器房间
+            // rooms.forEach(room => {
+            //     socket.join(room.Rid)
+            // })
             onlineUsers.push(thisUser)
             console.log(`${thisUser.Uid}:${thisUser.Uname}登入成功`)
             // 推送在线列表
@@ -112,10 +112,36 @@ io.on("connection", socket => {
         }
         console.log(`当前在线用户${onlineUsers.length}人`)
     })
+    // 响应找回密码
+    socket.on('findPassword', (phone, callback) => {
+        // console.log(phone)
+        def.getPassword(phone, (success, results) => {
+            console.log(results)
+            callback(success, results[0].Password)
+        })
+    })
     // 监听请求房间列表
     socket.on('getUtoRList', callback => {
-        // console.log('发送房间数据')
-        callback(rooms)
+        // 更新房间数据
+        def.getUtoRList(thisUser.Uid, results => {
+            rooms = []
+            // console.log(results)
+            results.forEach((room, i) => {
+                // 检索对应房间信息
+                def.getRoomInfo(room.Rid, result => {
+                    // 房间信息绑定到socket
+                    rooms.push(result[0])
+                    // console.log(i)
+                    // console.log(results.length-1)
+                    // 更新所有房间数据后返回数据
+                    if (i == results.length-1) {
+                        // console.log('发送房间数据')
+                        // console.log(rooms)
+                        callback(rooms)
+                    }
+                })
+            })
+        })
     })
     // 监听请求历史记录
     socket.on('getHistoryMessage', (room, callback) => {
@@ -154,10 +180,10 @@ io.on("connection", socket => {
         });
         Rid += 1
         // 新建房间
-        if (str != ''||str != null) {
-            def.newroom(str,Rid,success => {
-                // 刷新列表
-                loadRooms()
+        if (str != '' || str != null) {
+            def.newroom(str, Rid, success => {
+                // 广播刷新列表
+                rvnewroom()
                 io.emit('rvnewroom')
                 callback(success)
             })
@@ -166,6 +192,18 @@ io.on("connection", socket => {
             callback(false)
         }
     })
+    // 加入群聊
+    socket.on('addroom', (rid, callback) => {
+        def.addRoom({ Rid: rid, Uid: thisUser.Uid }, success => {
+            // 广播刷新列表
+            rvnewroom()
+            callback(success)
+        })
+    })
+    // 广播刷新列表
+    function rvnewroom() {
+        io.emit('rvnewroom')
+    }
     // 监听断开连接
     socket.on("disconnect", () => {
         console.log(`${thisUser.Uname}断开了链接`)

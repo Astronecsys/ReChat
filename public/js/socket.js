@@ -8,7 +8,7 @@ let getValue = (id) => {
 let thisUser = {
     Uid: 0,
     Uname: '游客',
-    UAvatar: '游客头像',
+    UAvatar: '../image/avatar04.jpg',
     Phone: '游客电话',
     Password: '123456'
 }
@@ -94,12 +94,26 @@ document.getElementById('register').onclick = () => {
 
 
 }
+// 监听找回密码按钮
+document.getElementById('find').onclick = () => {
+    let phone = prompt('请输入你的手机号')
+    // 查询密码
+    socket.emit('findPassword', phone, (success, password) => {
+        console.log(password)
+        if (success) {
+            alert(`找回成功:\n${password}`)
+        }
+        else {
+            alert(`找回失败`)
+        }
+    })
+}
 // 加载房间列表
 function loadrooms() {
     socket.emit('getUtoRList', rooms => {
-        // console.log('接受房间数据')
+        console.log('接受房间数据')
         roomList = rooms
-        // console.log(rooms)
+        console.log(rooms)
         $('.roomlist').html('')
         // 加载房间数据
         $.each(rooms, function (i, room) {
@@ -161,12 +175,14 @@ function loadUserInfo() {
     // console.log('加载个人信息')
     document.getElementById('myname').innerHTML = thisUser.Uname
     document.getElementById('myavatar').src = thisUser.UAvatar
+    document.getElementById('myid').innerHTML = thisUser.Uid
 }
 // 加载房间信息
 function loadRoomInfo() {
     // console.log('加载房间信息')
     document.getElementById('roomname').innerHTML = thisRoom.Rname
     document.getElementById('roomavatar').src = thisRoom.RAvatar
+    document.getElementById('rid').innerHTML = thisRoom.Rid
 }
 // 监听发送按钮
 document.getElementById('send').onclick = () => {
@@ -211,9 +227,11 @@ socket.on('pushOnlie', (newOnlineList) => {
 })
 // 新建聊天
 document.getElementById('newroom').onclick = () => {
-    let str = prompt('请输入成员')
-    socket.emit('newroom', str, success => {
+    let str = prompt('请输入新房间名字和成员账号,以逗号隔开')
+    socket.emit('newroom', str, (success) => {
         if (success) {
+            console.log('更新房间列表')
+            // loadrooms()
             alert('建立成功')
         }
         else {
@@ -221,7 +239,22 @@ document.getElementById('newroom').onclick = () => {
         }
     })
 }
-// 新建群聊后刷新列表
+// 刷新列表
 socket.on('rvnewroom', () => {
+    console.log('接受广播刷新列表')
     loadrooms()
 })
+// 加入聊天
+document.getElementById('addroom').onclick = () => {
+    let rid = prompt('请输入要加入的房间号')
+    socket.emit('addroom', rid, (success) => {
+        if (success) {
+            console.log('更新房间列表')
+            // loadrooms()
+            alert('加入成功')
+        }
+        else {
+            alert('加入失败')
+        }
+    })
+}

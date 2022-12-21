@@ -18,8 +18,8 @@
 
 <body>
     <!-- 调试按钮 -->
-    <button id="t0">切换登入前</button>
-    <button id="t1">切换登入后</button>
+    <button id="t0">debug:切换登入前</button>
+    <button id="t1">debug:切换登入后</button>
     <!-- 欢迎界面 -->
     <div id="container" class="container">
         <div class="welcome">
@@ -43,6 +43,7 @@
                         <input id="Uid" type="text" placeholder="账号">
                         <input id="password0" type="password" placeholder="密码">
                         <button type="button" id="login" class="button submit">开始聊天</button>
+                        <button type="button" id="find" class="button submit">找回密码</button>
                     </form>
                 </div>
             </div>
@@ -68,6 +69,8 @@
             <div class="myinfo" id="myinfo">
                 <img id="myavatar" src="../image/flower2.png">
                 <span id="myname">游客</span>
+                <br>
+                <span id="myid">0</span>
             </div>
             <div class="roomdesk">
                 <h3>聊天列表</h3>
@@ -84,6 +87,7 @@
             <div class="msgwright">
                 <textarea id="presend" cols="30" rows="10" placeholder="在这里输入"></textarea>
                 <button id="send" class="bbtt"></button>
+                <button id="addroom" class="bbtt"></button>
                 <button id="newroom" class="bbtt"></button>
                 <button id="size1" class="bbtt"></button>
                 <button id="size2" class="bbtt"></button>
@@ -96,6 +100,8 @@
             <div class="roominfo">
                 <img id="roomavatar" src="../image/flower1.png">
                 <span id="roomname">来聊天吧</span>
+                <br>
+                <span id="rid">0</span>
             </div>
             <div class="memberdesk">
                 <h3>在线列表</h3>

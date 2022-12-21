@@ -1,6 +1,10 @@
 # ReChat
  B/S 即时通讯
 
+ 前端使用原生HTML,CSS,JS
+ 后端使用Node.js
+ 通过Socket.io通信
+
 # 前置
 Git
 Node
@@ -22,3 +26,11 @@ npm i
 ```
 node index.js
 ```
+
+# 演示
+
+![](./草稿/register.JPG)
+![](./草稿/login.JPG)
+![](./草稿/chat1.JPG)
+![](./草稿/chat2.JPG)
+![](./草稿/chat3.JPG)

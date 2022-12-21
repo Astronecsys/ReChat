@@ -171,3 +171,24 @@ module.exports.sendMessage = (premsg, callback) => {
         callback(true)
     })
 }
+// 找回密码
+module.exports.getPassword = (Phone, callback) => {
+    db.query(`select * from User where Phone  = ${Phone}`, (err, results) => {
+        if (err) {
+            console.log(err.message)
+            callback(false,[])
+            return
+        }
+        callback(true,results)
+    })
+}
+// 加入房间
+module.exports.addRoom = (premsg, callback) => {
+    db.query('insert into belong set ?', premsg, (err, results) => {
+        if (err) {
+            console.log(err.message)
+            callback(false)
+        }
+        callback(true)
+    })
+}
