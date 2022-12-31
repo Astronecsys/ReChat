@@ -33,4 +33,3 @@ node index.js
 ![](./草稿/login.JPG)
 ![](./草稿/chat1.JPG)
 ![](./草稿/chat2.JPG)
-![](./草稿/chat3.JPG)

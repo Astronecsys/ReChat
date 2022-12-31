@@ -12,6 +12,7 @@ const io = new Server(server, { /* options */ });
 const db = require('./db/db')
 const def = require('./db/def')
 
+// 端口号
 const port = 80
 
 app.use(express.static('./public'))
